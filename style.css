@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Vazir", sans-serif;
+  font-family: sans-serif;
 }
 body {
   display: flex;
@@ -39,9 +39,10 @@ body {
   outline: none;
   border: none;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 .not-found {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -55,4 +56,56 @@ body {
   color: #06283d;
   font-size: 1.5rem;
   font-weight: 500;
+}
+.wether-box {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+}
+.wether-box img {
+  height: 200px;
+}
+.wether-box__info {
+  color: #06283d;
+  margin-bottom: 4rem;
+}
+.tempreture {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.tempreture span {
+  font-size: 1.2rem;
+  vertical-align: top;
+}
+.description {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.wether-details {
+  display: none;
+  justify-content: space-around;
+}
+.humidity,
+.wind {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wether-details i {
+  font-size: 1.75rem;
+  color: #06283d;
+}
+
+.text span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #06283d;
+}
+.text p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #06283d;
 }
