@@ -24,11 +24,13 @@ body {
   border: none;
   color: #06283d;
   outline: none;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin: 0 0.3rem;
+  text-transform: uppercase;
 }
 .search-box input::placeholder {
   color: #06283d;
+  text-transform: capitalize;
 }
 .search-box button {
   color: #06283d;
@@ -43,6 +45,8 @@ body {
 }
 .not-found {
   display: none;
+  scale: 0;
+  opacity: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -59,6 +63,8 @@ body {
 }
 .wether-box {
   display: none;
+  scale: 0;
+  opacity: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -86,6 +92,8 @@ body {
 }
 .wether-details {
   display: none;
+  opacity: 0;
+  scale: 0;
   justify-content: space-around;
 }
 .humidity,
@@ -108,4 +116,15 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   color: #06283d;
+}
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
