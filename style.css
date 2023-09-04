@@ -60,6 +60,7 @@ body {
   color: #06283d;
   font-size: 1.5rem;
   font-weight: 500;
+  margin-bottom: 2rem;
 }
 .wether-box {
   display: none;

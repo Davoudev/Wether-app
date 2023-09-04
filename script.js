@@ -5,17 +5,31 @@ let description = document.querySelector(".description");
 let wetherDetails = document.querySelector(".wether-details");
 let wind = document.querySelector(".wind span");
 let humidity = document.querySelector(".humidity span");
+let notFound = document.querySelector(".not-found");
 
+// add event to the search button
 search.addEventListener("click", (e) => {
-  let APIKey = "1b1fca55c93758b169f412e7b62556ba";
+  let APIKey = "APIKey";
   let city = document.querySelector(".search-box input").value;
+  //get data from API
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`
   )
     .then((response) => response.json())
     .then((json) => {
       let image = document.querySelector(".wether-box img");
-      console.log(json);
+
+      // checking for invalid region
+      if (json.cod == "404") {
+        notFound.style.display = "flex";
+        notFound.classList.add("fadeIn");
+        wetherDetails.style.display = "none";
+        wetherBox.style.display = "none";
+      } else {
+        notFound.classList.remove("fadeIn");
+        notFound.style.display = "none";
+      }
+      // choice Appropriate image
       switch (json.weather[0].main) {
         case "Clear":
           image.src = "./images/clear.png";
@@ -37,6 +51,7 @@ search.addEventListener("click", (e) => {
         default:
           image.src = "";
       }
+      // showing Details
       wetherBox.style.display = "flex";
       wetherDetails.style.display = "flex";
       wetherBox.classList.add("fadeIn");
