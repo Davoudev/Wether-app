@@ -3,6 +3,8 @@ let wetherBox = document.querySelector(".wether-box");
 let tempreture = document.querySelector(".tempreture");
 let description = document.querySelector(".description");
 let wetherDetails = document.querySelector(".wether-details");
+let wind = document.querySelector(".wind span");
+let humidity = document.querySelector(".humidity span");
 
 search.addEventListener("click", (e) => {
   let APIKey = "1b1fca55c93758b169f412e7b62556ba";
@@ -40,6 +42,8 @@ search.addEventListener("click", (e) => {
       wetherBox.classList.add("fadeIn");
       wetherDetails.classList.add("fadeIn");
       description.innerHTML = json.weather[0].description;
-      tempreture.innerHTML = parseInt(json.main.temp);
+      tempreture.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+      humidity.innerHTML = `${json.main.humidity}%`;
+      wind.innerHTML = `${parseInt(json.wind.speed)}km/h`;
     });
 });
